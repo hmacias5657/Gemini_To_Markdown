@@ -33,6 +33,9 @@ The script is a single IIFE with these internal functions:
 | `[data-math]` | LaTeX source attribute on `.math-block` (display) or `<span>` (inline) divs |
 | `.katex` / `.katex-display` | KaTeX rendered spans (skipped during text extraction) |
 | `.conversation-container` | Parent container for all turns |
+| `code-block` | Gemini's code block container (custom element, NOT `<pre>`) |
+| `.code-block-decoration` | Language label element inside `code-block` |
+| `table-block` | Gemini's table container (custom element, NOT `<table>`) |
 
 ## Known Issues & Edge Cases
 
@@ -40,6 +43,7 @@ The script is a single IIFE with these internal functions:
 - **Virtual scrolling**: Turns that are scrolled out of view may be removed from the DOM. Ensure all desired turns are visible before running the script.
 - **Inline math inside `<p>`**: Handled by walking `childNodes` and replacing `[data-math]` elements with `$...$` while using `textContent` for other children.
 - **Display math wrapped in parent div**: The `.math-block` is often inside a `<div data-path-to-node="...">` wrapper. `formatMarkdownPanel` detects `querySelector('[data-math]')` on children to find it.
+- **Custom elements for code and tables**: Gemini uses `<code-block>` and `<table-block>` custom elements instead of standard `<pre>` and `<table>`. The script now handles both the custom elements and standard HTML elements as fallbacks.
 
 ## Testing
 

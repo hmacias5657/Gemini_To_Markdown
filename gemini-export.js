@@ -210,6 +210,18 @@
       } else if (tag === 'p' || tag === 'h2' || tag === 'h3' || tag === 'h4' || tag === 'h5' || tag === 'h6' ||
                  tag === 'blockquote' || tag === 'hr' || tag === 'pre' || tag === 'table' || tag === 'img') {
         result += formatContent(child);
+      } else if (tag === 'code-block' || child.querySelector('code-block')) {
+        const block = tag === 'code-block' ? child : child.querySelector('code-block');
+        const code = block.querySelector('code');
+        const deco = block.querySelector('.code-block-decoration');
+        const lang = deco ? deco.textContent.trim().toLowerCase() :
+                     (code && code.className ? code.className.replace(/.*language-/, '') : '');
+        const content = code ? code.textContent : block.textContent;
+        result += '```' + lang + '\n' + content.trim() + '\n```\n\n';
+      } else if (tag === 'table-block' || child.querySelector('table-block')) {
+        const block = tag === 'table-block' ? child : child.querySelector('table-block');
+        const table = block.querySelector('table');
+        if (table) result += formatContent(table);
       } else if (tag === 'ul' || tag === 'ol') {
         for (const li of child.children) {
           if (li.tagName.toLowerCase() === 'li') result += formatContent(li);

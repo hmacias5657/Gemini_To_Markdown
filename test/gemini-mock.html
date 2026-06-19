@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gemini Mock Test Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1e1e1e;
+            color: #e0e0e0;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: #2d2d2d;
+            border-radius: 8px;
+        }
+        
+        h1 {
+            margin-top: 0;
+            color: #4fc3f7;
+        }
+        
+        .controls {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        button {
+            padding: 12px 24px;
+            font-size: 16px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        button:hover {
+            background-color: #45a049;
+        }
+        
+        #resetBtn {
+            background-color: #f44336;
+        }
+        
+        #resetBtn:hover {
+            background-color: #da190b;
+        }
+        
+        #runBtn {
+            background-color: #2196f3;
+        }
+        
+        #runBtn:hover {
+            background-color: #0b7dda;
+        }
+        
+        .mock-dom {
+            display: none;
+        }
+        
+        #output {
+            width: 100%;
+            height: 500px;
+            background-color: #2d2d2d;
+            color: #e0e0e0;
+            border: 1px solid #444;
+            border-radius: 4px;
+            padding: 15px;
+            font-family: monospace;
+            white-space: pre-wrap;
+            overflow: auto;
+            margin-top: 20px;
+        }
+        
+        .output-header {
+            margin-top: 30px;
+            padding: 10px;
+            background-color: #2d2d2d;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Gemini to Markdown Export - Mock Test Page</h1>
+            <p>This page simulates the DOM structure of gemini.google.com to test the bookmarklet functionality</p>
+            <p>Click "Run Bookmarklet" to export the conversation to Markdown format</p>
+        </header>
+        
+        <div class="controls">
+            <button id="runBtn">Run Bookmarklet</button>
+            <button id="resetBtn">Reset</button>
+        </div>
+        
+        <!-- Hidden mock DOM structure -->
+        <div class="mock-dom">
+            <user-query>
+                <div class="query-text-line">Explain quantum computing in simple terms</div>
+            </user-query>
+            
+            <model-response>
+                <div class="markdown-main-panel">
+                    <p>Quantum computing is a type of computing that uses quantum bits or qubits instead of classical bits.</p>
+                    
+                    <h2>How Quantum Computing Works</h2>
+                    
+                    <p>Unlike classical computers which use bits that are either 0 or 1, qubits can exist in multiple states simultaneously through a property called superposition.</p>
+                    
+                    <h3>Key Concepts</h3>
+                    
+                    <ul>
+                        <li>Superposition: Qubits can be both 0 and 1 at the same time</li>
+                        <li>Entanglement: Qubits can be correlated in ways that classical bits cannot</li>
+                        <li>Interference: Quantum states can amplify correct answers and cancel wrong ones</li>
+                    </ul>
+                    
+                    <p>Here's a simple example:</p>
+                    
+                    <pre><code class="language-python">def quantum_example():
+    # This represents a quantum algorithm
+    return "Quantum computation can solve some problems faster"</code></pre>
+                    
+                    <h3>Applications</h3>
+                    
+                    <blockquote>
+                        Quantum computing has potential applications in cryptography, drug discovery, and optimization problems.
+                    </blockquote>
+                    
+                    <p>For more complex calculations, we might see:</p>
+                    
+                    <pre><code class="language-javascript">const quantumAlgorithms = {
+    shor: "for factoring large numbers",
+    grover: "for database search"
+};</code></pre>
+                    
+                    <h3>Mathematical Representation</h3>
+                    
+                    <p>The state of a qubit can be represented as:</p>
+                    
+                    <div data-math="|\psi\rangle = \alpha|0\rangle + \beta|1\rangle" class="math-block"></div>
+                    
+                    <p>Where α and β are complex numbers satisfying:</p>
+                    
+                    <div data-math="|\alpha|^2 + |\beta|^2 = 1" class="math-block"></div>
+                    
+                    <p>And for inline equations like E = mc²:</p>
+                    
+                    <p>The famous equation is $E = mc^2$, where E is energy, m is mass, and c is the speed of light.</p>
+                    
+                    <p>Quantum algorithms often involve:</p>
+                    
+                    <div data-math="\sqrt{2}" class="math-block"></div>
+                    
+                    <p>These principles enable quantum computers to process information in fundamentally different ways than classical computers.</p>
+                    
+                    <hr>
+                    
+                    <p>Example table:</p>
+                    
+                    <table>
+                        <tr>
+                            <th>Classical Computer</th>
+                            <th>Quantum Computer</th>
+                        </tr>
+                        <tr>
+                            <td>Bit = 0 or 1</td>
+                            <td>Qubit = 0 and 1</td>
+                        </tr>
+                        <tr>
+                            <td>Parallel processing limited</td>
+                            <td>Superposition enables parallelism</td>
+                        </tr>
+                    </table>
+                    
+                    <p>Additional example:</p>
+                    
+                    <div data-math="x^2 + y^2 = z^2" class="math-block"></div>
+                </div>
+            </model-response>
+            
+            <user-query>
+                <div class="query-text-line">Can you show me how to implement a simple quantum circuit?</div>
+                <div class="query-text-line">I'm particularly interested in the Hadamard gate.</div>
+            </user-query>
+            
+            <model-response>
+                <div class="markdown-main-panel">
+                    <p>A Hadamard gate is fundamental in quantum computing and creates superposition. Here's how it works:</p>
+                    
+                    <h2>Hadamard Gate Implementation</h2>
+                    
+                    <p>The Hadamard gate transforms a qubit from basis states to superposition states:</p>
+                    
+                    <ul>
+                        <li>|0⟩ → (|0⟩ + |1⟩)/√2</li>
+                        <li>|1⟩ → (|0⟩ - |1⟩)/√2</li>
+                    </ul>
+                    
+                    <p>In Qiskit (Python library), you can implement it like this:</p>
+                    
+                    <code-block>
+                        <code class="language-python">from qiskit import QuantumCircuit
+                        
+                        qc = QuantumCircuit(1, 1)
+                        qc.h(0)  # Apply Hadamard gate
+                        qc.measure(0, 0)
+                        
+                        print(qc.draw())</code>
+                        <div class="code-block-decoration">python</div>
+                    </code-block>
+                    
+                    <p>For a more complex example with multiple qubits:</p>
+                    
+                    <code-block>
+                        <code class="language-python">from qiskit import QuantumCircuit
+                        
+                        qc = QuantumCircuit(2, 2)
+                        qc.h(0)  # Apply Hadamard to first qubit
+                        qc.cx(0, 1)  # Apply CNOT gate
+                        qc.measure_all()
+                        
+                        print(qc.draw())</code>
+                    </code-block>
+                    
+                    <p>Mathematically, the Hadamard gate matrix is:</p>
+                    
+                    <div data-math="\frac{1}{\sqrt{2}} \begin{bmatrix} 1 & 1 \\ 1 & -1 \end{bmatrix}" class="math-block"></div>
+                    
+                    <p>It can also be expressed as:</p>
+                    
+                    <div data-math="H = \frac{1}{\sqrt{2}} \begin{bmatrix} 1 & 1 \\ 1 & -1 \end{bmatrix}" class="math-block"></div>
+                    
+                    <p>Another way to express it:</p>
+                    
+                    <div data-math="H = \frac{1}{\sqrt{2}} \begin{bmatrix} 1 & 1 \\ 1 & -1 \end{bmatrix}" class="math-block"></div>
+                    
+                    <p>Let's see how it looks in a simple visualization:</p>
+                    
+                    <p>When applied to |0⟩:</p>
+                    
+                    <div data-math="H|0\rangle = \frac{1}{\sqrt{2}}(|0\rangle + |1\rangle)" class="math-block"></div>
+                    
+                    <p>And when applied to |1⟩:</p>
+                    
+                    <div data-math="H|1\rangle = \frac{1}{\sqrt{2}}(|0\rangle - |1\rangle)" class="math-block"></div>
+                    
+                    <p>The Hadamard gate is its own inverse:</p>
+                    
+                    <div data-math="H^2 = I" class="math-block"></div>
+                </div>
+            </model-response>
+            
+            <user-query>
+                <div class="query-text-line">What are the practical limitations of current quantum computers?</div>
+            </user-query>
+            
+            <model-response>
+                <div class="markdown-main-panel">
+                    <h2>Current Limitations of Quantum Computers</h2>
+                    
+                    <p>Despite significant progress, quantum computers face several practical challenges:</p>
+                    
+                    <ol>
+                        <li><strong>Decoherence</strong> - Quantum states are extremely fragile and easily disrupted by environmental noise</li>
+                        <li><strong>Error rates</strong> - Current quantum gates have high error rates compared to classical gates</li>
+                        <li><strong>Scalability</strong> - Building large-scale quantum systems with many stable qubits is extremely difficult</li>
+                        <li><strong>Temperature requirements</strong> - Most quantum computers operate near absolute zero temperatures</li>
+                    </ol>
+                    
+                    <blockquote>
+                        "We're still in the noisy intermediate-scale quantum (NISQ) era, with limited coherence times and high error rates."
+                    </blockquote>
+                    
+                    <p>Comparison table:</p>
+                    
+                    <table>
+                        <tr>
+                            <th>Classical</th>
+                            <th>Quantum</th>
+                        </tr>
+                        <tr>
+                            <td>Stable at room temperature</td>
+                            <td>Requires cryogenic cooling</td>
+                        </tr>
+                        <tr>
+                            <td>High precision gates</td>
+                            <td>Limited precision due to decoherence</td>
+                        </tr>
+                        <tr>
+                            <td>Scalable to millions of bits</td>
+                            <td>Currently limited to hundreds of qubits</td>
+                        </tr>
+                    </table>
+                    
+                    <p>Quantum supremacy demonstrations have shown advantages, but practical applications remain challenging due to:</p>
+                    
+                    <ul>
+                        <li>Quantum error correction requires many physical qubits to make one logical qubit</li>
+                        <li>Complex control electronics needed for quantum operations</li>
+                        <li>Specialized programming knowledge required</li>
+                    </ul>
+                    
+                    <p>For reference, recent results show:</p>
+                    
+                    <div data-math="P_{error} = e^{-\Gamma T}" class="math-block"></div>
+                    
+                    <hr>
+                    
+                    <p>Quantum computing remains an active research area with promising future applications in:</p>
+                    
+                    <ul>
+                        <li>Cryptography</li>
+                        <li>Materials science</li>
+                        <li>Drug discovery</li>
+                        <li>Financial modeling</li>
+                    </ul>
+                </div>
+            </model-response>
+        </div>
+        
+        <div class="output-header">Generated Markdown Output:</div>
+        <pre id="output">Output will appear here...</pre>
+    </div>
+
+    <script>
+        // The bookmarklet code (as a string)
+        const bookmarkletCode = `(function() {
+  'use strict';
+
+  function formatMathML(el, isTopLevel) {
+    const TEX_REPLACE = {
+      '\u2192': '\\to ',
+      '\u2190': '\\leftarrow ',
+      '\u21D2': '\\Rightarrow ',
+      '\u21D4': '\\Leftrightarrow ',
+      '\u03B1': '\\alpha ',
+      '\u03B2': '\\beta ',
+      '\u03B3': '\\gamma ',
+      '\u0394': '\\Delta ',
+      '\u03B4': '\\delta ',
+      '\u03B8': '\\theta ',
+      '\u03BB': '\\lambda ',
+      '\u03C0': '\\pi ',
+      '\u03C3': '\\sigma ',
+      '\u03C6': '\\phi ',
+      '\u03C9': '\\omega ',
+      '\u221E': '\\infty ',
+      '\u2248': '\\approx ',
+      '\u2260': '\\neq ',
+      '\u2264': '\\leq ',
+      '\u2265': '\\geq ',
+      '\u00B1': '\\pm ',
+      '\u00D7': '\\times ',
+      '\u00F7': '\\div ',
+      '\u2211': '\\sum ',
+      '\u220F': '\\prod ',
+      '\u222B': '\\int ',
+      '\u2202': '\\partial '
+    };
+
+    if (el.nodeType === Node.TEXT_NODE) return el.textContent;
+
+    const tag = el.tagName.toLowerCase();
+
+    if (isTopLevel === undefined) isTopLevel = true;
+
+    if (isTopLevel && tag === 'math') {
+      const annotation = el.querySelector('annotation[encoding="application/x-tex"]');
+      if (annotation) {
+        const display = el.getAttribute('display');
+        const tex = annotation.textContent.trim();
+        if (display === 'block' || display === 'display') {
+          return '$$\n' + tex + '\n$$';
+        }
+        return '$' + tex + '$';
+      }
+    }
+
+    if (tag === 'mi' || tag === 'mn' || tag === 'mo' || tag === 'mtext') {
+      let t = el.textContent;
+      for (const [k, v] of Object.entries(TEX_REPLACE)) {
+        t = t.replace(new RegExp(k.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g'), v);
+      }
+      return t;
+    }
+
+    if (tag === 'math') {
+      const display = el.getAttribute('display');
+      let content = '';
+      for (const child of el.childNodes) {
+        content += formatMathML(child, false);
+      }
+      content = content.replace(/\s+/g, ' ').trim();
+      if (display === 'block' || display === 'display') {
+        return '$$\n' + content + '\n$$';
+      }
+      return '$' + content + '$';
+    }
+
+    if (tag === 'semantics') {
+      if (el.children.length > 0) return formatMathML(el.children[0], false);
+      return '';
+    }
+
+    if (tag === 'annotation') return '';
+
+    const children = Array.from(el.childNodes).filter(c =>
+      !(c.nodeType === Node.ELEMENT_NODE && c.tagName.toLowerCase() === 'annotation')
+    );
+
+    if (tag === 'mrow') {
+      return children.map(c => formatMathML(c, false)).join(' ').replace(/\s+/g, ' ').trim();
+    }
+
+    if (tag === 'msup' && el.children.length >= 2) {
+      return formatMathML(el.children[0], false) + '^{' + formatMathML(el.children[1], false) + '}';
+    }
+
+    if (tag === 'msub' && el.children.length >= 2) {
+      return formatMathML(el.children[0], false) + '_{' + formatMathML(el.children[1], false) + '}';
+    }
+
+    if (tag === 'msubsup' && el.children.length >= 3) {
+      return formatMathML(el.children[0], false) + '_{' + formatMathML(el.children[1], false) + '}^{' + formatMathML(el.children[2], false) + '}';
+    }
+
+    if (tag === 'mfrac' && el.children.length >= 2) {
+      return '\\frac{' + formatMathML(el.children[0], false) + '}{' + formatMathML(el.children[1], false) + '}';
+    }
+
+    if (tag === 'msqrt') {
+      let inner = children.map(c => formatMathML(c, false)).join(' ').replace(/\s+/g, ' ').trim();
+      return '\\sqrt{' + inner + '}';
+    }
+
+    if (tag === 'mover' && el.children.length >= 2) {
+      return '\\overset{' + formatMathML(el.children[1], false) + '}{' + formatMathML(el.children[0], false) + '}';
+    }
+
+    if (tag === 'munder' && el.children.length >= 2) {
+      return '\\underset{' + formatMathML(el.children[1], false) + '}{' + formatMathML(el.children[0], false) + '}';
+    }
+
+    if (tag === 'munderover' && el.children.length >= 3) {
+      return '\\overset{' + formatMathML(el.children[2], false) + '}_{' + formatMathML(el.children[1], false) + '}{' + formatMathML(el.children[0], false) + '}';
+    }
+
+    return el.textContent;
+  }
+
+  function formatContent(el) {
+    const tag = el.tagName.toLowerCase();
+    const text = el.textContent.trim();
+    if (!text && !el.hasAttribute('data-math')) return '';
+
+    if (el.hasAttribute('data-math')) {
+      const tex = el.getAttribute('data-math').trim();
+      const cls = el.className || '';
+      if (cls.includes('math-block') || cls.includes('display')) {
+        return '$$\n' + tex + '\n$$\n\n';
+      }
+      return '$' + tex + '$\n\n';
+    }
+
+    if (tag === 'p') return text + '\n\n';
+    if (tag === 'li') {
+      const parent = el.parentNode;
+      const parentTag = parent ? parent.tagName.toLowerCase() : '';
+      if (parentTag === 'ul' || parentTag === 'ol') return '- ' + text + '\n';
+      return text + '\n';
+    }
+    if (tag === 'blockquote') return '> ' + text.replace(/\n/g, '\n> ') + '\n\n';
+    if (tag === 'pre') {
+      const code = el.querySelector('code');
+      const lang = code && code.className ? code.className.replace(/.*language-/, '') : '';
+      const content = code ? code.textContent : el.textContent;
+      return '\n```' + lang + '\n' + content.trim() + '\n```\n\n';
+    }
+    if (tag === 'table') {
+      let result = '\n';
+      const rows = el.querySelectorAll('tr');
+      rows.forEach((row, ri) => {
+        const cells = row.querySelectorAll('td, th');
+        const vals = [];
+        cells.forEach(c => vals.push(c.textContent.trim()));
+        if (vals.length) result += '| ' + vals.join(' | ') + ' |\n';
+        if (ri === 0) result += '| ' + vals.map(() => '---').join(' | ') + ' |\n';
+      });
+      return result + '\n';
+    }
+    if (['h1','h2','h3','h4','h5','h6'].includes(tag)) {
+      return '#'.repeat(parseInt(tag[1])) + ' ' + text + '\n\n';
+    }
+    if (tag === 'hr') return '---\n\n';
+    if (tag === 'img') {
+      const alt = el.getAttribute('alt');
+      if (alt) return alt + '\n\n';
+      return '';
+    }
+    if (tag === 'math') return formatMathML(el);
+
+    return text + '\n\n';
+  }
+
+  function extractUserText(el) {
+    const lines = el.querySelectorAll('.query-text-line');
+    if (lines.length) {
+      const texts = [];
+      lines.forEach(l => { const t = l.textContent.trim(); if (t) texts.push(t); });
+      return texts.join('\n');
+    }
+    return el.textContent.trim();
+  }
+
+  function formatMarkdownPanel(panel) {
+    let result = '';
+    for (const child of panel.children) {
+      const tag = child.tagName.toLowerCase();
+      if (child.hasAttribute('data-math')) {
+        result += formatContent(child);
+      } else if (child.querySelector('[data-math]')) {
+        let inner = '';
+        for (const c of child.childNodes) {
+          if (c.nodeType === Node.TEXT_NODE) {
+            inner += c.textContent;
+          } else if (c.nodeType === Node.ELEMENT_NODE) {
+            if (c.hasAttribute('data-math')) {
+              inner += formatContent(c).replace(/\n+$/, '');
+            } else {
+              inner += c.textContent;
+            }
+          }
+        }
+        const cleaned = inner.trim();
+        if (cleaned) result += cleaned + '\n\n';
+      } else if (tag === 'p' || tag === 'h2' || tag === 'h3' || tag === 'h4' || tag === 'h5' || tag === 'h6' ||
+                 tag === 'blockquote' || tag === 'hr' || tag === 'pre' || tag === 'table' || tag === 'img') {
+        result += formatContent(child);
+      } else if (tag === 'ul' || tag === 'ol') {
+        for (const li of child.children) {
+          if (li.tagName.toLowerCase() === 'li') result += formatContent(li);
+        }
+      } else if (tag === 'div' && child.textContent.trim()) {
+        const txt = child.textContent.replace(/\u200B/g, '').replace(/\s+/g, ' ').trim();
+        if (txt) result += txt + '\n\n';
+      }
+    }
+    return result.replace(/\n{4,}/g, '\n\n\n');
+  }
+
+  function buildConversation() {
+    const allEls = document.querySelectorAll('user-query, model-response');
+    if (allEls.length === 0) throw new Error('No user-query/model-response elements found. Are you on a Gemini chat page?');
+
+    const turns = [];
+    let currentModelBuffer = [];
+
+    for (const node of allEls) {
+      const tag = node.tagName.toLowerCase();
+      if (tag === 'user-query') {
+        if (currentModelBuffer.length > 0) {
+          turns.push({ role: 'model', nodes: currentModelBuffer });
+          currentModelBuffer = [];
+        }
+        turns.push({ role: 'user', nodes: [node] });
+      } else if (tag === 'model-response') {
+        if (turns.length > 0 && turns[turns.length - 1].role === 'user') {
+          currentModelBuffer.push(node);
+        }
+      }
+    }
+    if (currentModelBuffer.length > 0) {
+      turns.push({ role: 'model', nodes: currentModelBuffer });
+    }
+    if (turns.length === 0) throw new Error('Could not extract conversation turns.');
+
+    const ts = new Date().toLocaleString();
+    let md = '# Google Gemini Conversation Export\n\n> Exported on: ' + ts + '\n\n---\n\n';
+
+    for (const turn of turns) {
+      const label = turn.role === 'user' ? '**You**' : '**Gemini**';
+      md += '### ' + label + '\n\n';
+      if (turn.role === 'user') {
+        md += extractUserText(turn.nodes[0]) + '\n\n';
+      } else {
+        const seen = new Set();
+        for (const node of turn.nodes) {
+          const panel = node.querySelector('.markdown-main-panel');
+          if (panel) {
+            const content = formatMarkdownPanel(panel);
+            if (content.trim()) {
+              const key = content.trim().substring(0, 40);
+              if (!seen.has(key)) {
+                md += content;
+                seen.add(key);
+              }
+            }
+          }
+        }
+        md += '\n';
+      }
+      md += '---\n\n';
+    }
+
+    return md;
+  }
+
+  try {
+    const markdown = buildConversation();
+    const ts = new Date().toISOString().slice(0, 19).replace(/[:-]/g, '');
+    const filename = 'gemini-conversation-' + ts + '.md';
+
+    // Instead of triggering download, we'll just display in output
+    const outputElement = document.getElementById('output');
+    outputElement.textContent = markdown;
+    
+    console.log('%c[Done] Exported to: ' + filename, 'color: green; font-weight: bold;');
+    console.log('%cPreview:', 'color: blue;');
+    console.log(markdown.slice(0, 2000) + '...');
+  } catch (err) {
+    console.error('%c[Error] ' + err.message, 'color: red; font-weight: bold;');
+  }
+})();`;
+
+        // Run button event handler
+        document.getElementById('runBtn').addEventListener('click', function() {
+            try {
+                // Create a temporary script element with the bookmarklet code
+                const script = document.createElement('script');
+                script.textContent = bookmarkletCode;
+                
+                // Execute the bookmarklet code
+                document.head.appendChild(script);
+                
+                // Remove the script element after execution
+                document.head.removeChild(script);
+            } catch (error) {
+                console.error('Error executing bookmarklet:', error);
+                document.getElementById('output').textContent = 'Error: ' + error.message;
+            }
+        });
+
+        // Reset button event handler
+        document.getElementById('resetBtn').addEventListener('click', function() {
+            document.getElementById('output').textContent = 'Output will appear here...';
+        });
+    </script>
+</body>
+</html>
